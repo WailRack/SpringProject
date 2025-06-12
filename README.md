@@ -61,7 +61,7 @@
 
 ```bash
 # Сборка проекта
-mvn clean install
+gradle clean install
 
 # Запуск всех микросервисов и брокера сообщений
 docker-compose up --build
