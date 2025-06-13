@@ -13,7 +13,6 @@ import ru.ivan.account.services.AccountService;
 import javax.security.auth.login.AccountNotFoundException;
 
 @RestController
-@RequestMapping("/")
 public class AccountController {
 
     private final AccountService accountService;
@@ -29,7 +28,7 @@ public class AccountController {
         return convertToAccountResponseDTO(accountService.getAccountById(accountId));
     }
 
-    @PostMapping
+    @PostMapping("/")
     public ResponseEntity<AccountResponseDTO> createAccount(@RequestBody AccountRequestDTO accountRequestDTO) {
         accountService.createAccount(accountRequestDTO);
         return new ResponseEntity<>(HttpStatus.CREATED);
@@ -42,7 +41,7 @@ public class AccountController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{accountId}")
     public ResponseEntity<AccountResponseDTO> deleteAccount(@PathVariable("accountId") Long accountId) {
         accountService.deleteAccount(accountId);
         return new ResponseEntity<>(HttpStatus.OK);
