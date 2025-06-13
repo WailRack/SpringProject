@@ -21,7 +21,22 @@ public class BillService {
                 .orElseThrow(() -> new BillNotFoundException("not found by id: " + id));
     }
 
-    public Long createBill(Bill bill) {
-        return billRepository.save(bill).getId();
+    public void createBill(Bill bill) {
+        billRepository.save(bill);
+    }
+
+    public void updateBill(Bill bill, Long id) {
+        Bill oldBill = findById(id);
+
+        oldBill.setAccountId(bill.getAccountId());
+        oldBill.setAmount(bill.getAmount());
+        oldBill.setIdDefault(bill.getIdDefault());
+        oldBill.setOverdraftEnabled(bill.getOverdraftEnabled());
+        billRepository.save(oldBill);
+    }
+
+    public void deleteBill(Long id) {
+        Bill oldBill = findById(id);
+        billRepository.delete(oldBill);
     }
 }
