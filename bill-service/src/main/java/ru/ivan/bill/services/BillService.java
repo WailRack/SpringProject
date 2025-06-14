@@ -6,6 +6,8 @@ import ru.ivan.bill.exceptions.BillNotFoundException;
 import ru.ivan.bill.models.Bill;
 import ru.ivan.bill.repositoryes.BillRepository;
 
+import java.time.OffsetDateTime;
+
 @Service
 public class BillService {
 
@@ -22,6 +24,7 @@ public class BillService {
     }
 
     public void createBill(Bill bill) {
+        bill.setCreationDate(OffsetDateTime.now());
         billRepository.save(bill);
     }
 

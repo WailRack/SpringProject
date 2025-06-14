@@ -10,5 +10,6 @@ spring:
     user:
       password: admin
 
+
 server:
   port: 8001
