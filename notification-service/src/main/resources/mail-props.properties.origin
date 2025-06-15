@@ -1,0 +1,7 @@
+mail.username=
+mail.host=
+mail.password=
+mail.transport.protocol=
+mail.smtp.auth=
+mail.smtp.starttls.enable=
+mail.debug=
