@@ -9,5 +9,8 @@ import ru.ivan.deposit.dto.DepositResponseDTO;
 @RestController
 public class DepositController {
 
+    @PostMapping("/deposits")
+    public DepositResponseDTO deposit(@RequestBody DepositRequestDTO requestDTO) {
 
+    }
 }
