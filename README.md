@@ -61,7 +61,8 @@
 ```bash
 # Сборка проекта
 gradle clean install
-
+```
+```bash
 # Запуск всех микросервисов и брокера сообщений
 docker-compose up --build
 ```
